@@ -16,6 +16,7 @@ Antes de comenzar, asegúrate de tener instalados los siguientes requisitos en t
 - **Git**  
 - **PostgreSQL**  
 - **Visual Studio Code (VS Code)**  
+- **Postman** 
 
 ---
 
@@ -95,3 +96,20 @@ Antes de comenzar, asegúrate de tener instalados los siguientes requisitos en t
    ```
    npm run dev
    ```  
+
+### Ejecución de pruebas postman  
+1. **Configuración de Postman**  
+   Para probar en postman se debe abrir y crear una nueva solicitud donde se usara el metodo `GET`, y la URL `http://localhost:<NUEVO_PUERTO>/api/data` al hacer click en enviar, la solicitud traera  un JSON que contiene todos los usurios registrados en la base de datos, los datos se veran de la siguiente manera: 
+
+   ```json
+   {
+      "data": [
+         {
+            "id": 1,
+            "nombre": "nombre",
+            "correo": "correo@correo.com",
+            "edad": 20
+         }
+      ]
+   }
+   ```   
