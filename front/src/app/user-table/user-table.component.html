@@ -1,0 +1,25 @@
+<div class="table-container">
+  <table class="table"  *ngIf="users$ | async as users; else elseTemplate">
+    <thead>
+      <tr>
+        <th class="table-th">Id</th>
+        <th class="table-th">Nombre</th>
+        <th class="table-th">Correo</th>
+        <th class="table-th">Edad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users;">
+        <td class="table-td">{{ user.id }}</td>
+        <td class="table-td">{{ user.nombre }}</td>
+        <td class="table-td">{{ user.correo }}</td>
+        <td class="table-td">{{ user.edad }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #elseTemplate>
+    <div class="list-empty">
+      <span>No hay registros aún</span>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,21 @@
+<div class="form-container">
+  <img class="ler-logo" src="./img/ler.png" alt="LER prevencion" />
+  <h1>Crear Usuario</h1>
+  <form [formGroup]="form()" class="form">
+    <div class="input-form">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" type="text" formControlName="nombre" />
+    </div>
+    <div class="input-form">
+      <label for="correo">Correo:</label>
+      <input id="correo" type="email" formControlName="correo" />
+    </div>
+    <div class="input-form">
+      <label for="edad">Edad:</label>
+      <input id="edad" type="number" formControlName="edad" />
+    </div>
+    <div class="submit-button">
+      <button (click)="createUser($event)">Crear</button>
+    </div>
+  </form>
+</div>
