@@ -6,6 +6,7 @@
         <th class="table-th">Nombre</th>
         <th class="table-th">Correo</th>
         <th class="table-th">Edad</th>
+        <th class="table-th">Eliminar</th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +15,9 @@
         <td class="table-td">{{ user.nombre }}</td>
         <td class="table-td">{{ user.correo }}</td>
         <td class="table-td">{{ user.edad }}</td>
+        <td class="table-td" (click)="delete(user.id)">
+          <img width="30px" src="./img/trash.jpg" alt="icono de eliminar">
+        </td>
       </tr>
     </tbody>
   </table>

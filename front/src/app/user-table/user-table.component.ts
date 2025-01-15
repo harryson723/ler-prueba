@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../services/request.service';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of, switchAll, switchMap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { CommunicationService } from '../services/comunication.service';
 
@@ -30,6 +30,17 @@ export class UserTableComponent implements OnInit {
           this.users$ = of(res.data);
         }
         console.log(res);
+      },
+      error: (err) => console.log(err),
+    });
+  }
+
+  delete(id: string) {
+    this.requestService.delete('data/' + id).subscribe({
+      next: (res: any) => {
+        console.log(this.users$ = this.users$.pipe(
+          map((users: any[]) => users.filter(user => user.id !== id))
+        ));
       },
       error: (err) => console.log(err),
     });
