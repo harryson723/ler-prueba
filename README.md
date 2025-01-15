@@ -86,7 +86,7 @@ Antes de comenzar, asegúrate de tener instalados los siguientes requisitos en t
    Si cambias el puerto (`PORT`) del backend, actualiza también el archivo `src/environments/environment.ts` en el frontend. Modifica la variable `baseUrl` para reflejar el nuevo puerto:  
    ```typescript
    export const environment = {
-       baseUrl: 'http://localhost:<NUEVO_PUERTO>'
+       baseUrl: 'http://localhost:<NUEVO_PUERTO>/api/'
    };
    ```  
 
